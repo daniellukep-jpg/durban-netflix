@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Durban Invite 🎬</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- 🎬 INTRO -->
+<div id="intro">
+  <img src="images/Netflix_2016_N_logo.svg.png" class="netflix-logo">
+  <div class="loader"></div>
+</div>
+
+<!-- 🔊 SOUND -->
+<audio id="introSound" src="images/netflix-sound.mp3" preload="auto"></audio>
+
+<!-- 👤 PROFILES -->
+<div id="profiles" class="screen active">
+  <h1 class="title">Who's Watching?</h1>
+
+  <div class="profile-container">
+   <div class="profile" onclick="goToHome()">
+      <img src="images/daniel.jpg">
+      <p>Daniel</p>
+    </div>
+
+    <div class="profile" onclick="goToHome()">
+      <img src="images/monique.jpg">
+      <p>Monique</p>
+    </div>
+
+    <div class="profile" onclick="goToHome()">
+      <img src="images/josh.jpg">
+      <p>Josh</p>
+    </div>
+
+    <div class="profile" onclick="goToHome()">
+      <img src="images/matthew.jpg">
+      <p>Matthew</p>
+    </div>
+
+    <div class="profile" onclick="goToHome()">
+      <img src="images/chantelle.jpg">
+      <p>Chantelle</p>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 🎬 MODALS -->
+<div id="show1" class="modal">
+  <div class="modal-content">
+    <span onclick="closeModal('show1')">&times;</span>
+    <img src="images/bgr.jpg">
+    <p>This was one of our best days together… imagine this in Durban 😭</p>
+  </div>
+</div>
+
+<div id="show2" class="modal">
+  <div class="modal-content">
+    <span onclick="closeModal('show2')">&times;</span>
+    <img src="images/escape-room.jpg">
+    <p>We need more moments like this. Durban trip = solution.</p>
+  </div>
+</div>
+
+<div id="show3" class="modal">
+  <div class="modal-content">
+    <span onclick="closeModal('show3')">&times;</span>
+    <img src="images/halloween.JPG">
+    <p>Be honest… you miss this too 👀</p>
+  </div>
+</div>
+
+<div id="show4" class="modal">
+  <div class="modal-content">
+    <span onclick="closeModal('show4')">&times;</span>
+    <img src="images/ai-ushaka.PNG">
+    <p>This could literally be Durban… just saying 👀</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

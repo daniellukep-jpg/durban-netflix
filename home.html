@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Home</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-left">
+    <img src="images/Netflix_2016_N_logo.svg.png" class="logo">
+   
+   <a href="https://tinyurl.com/2p9j6tzv" target="_blank">
+     <span class="nav-item active">Home</span>
+</a>
+    
+    <a href="https://tinyurl.com/2p9j6tzv" target="_blank">
+    <span class="nav-item">Memories</span>
+</a>
+  
+     <a href="https://tinyurl.com/2p9j6tzv" target="_blank">
+  <span class="nav-item">Durban 👀</span>
+</a>
+   
+  </div>
+
+  <div class="nav-right">
+    <button onclick="goBack()" class="back-btn">← Exit</button>
+  </div>
+</header>
+
+<div class="hero">
+  <img src="images/margate.jpg" class="hero-img">
+
+  <div class="hero-content">
+    <h1>DURBAN 2026 😏</h1>
+    <p>This could be us… but only if you say yes.</p>
+
+    <div class="hero-buttons">
+      <a href="https://www.flysafair.co.za/cheap-flights/durban" target="_blank">
+  <button class="play-btn">▶ Play</button>
+</a>
+<a href="https://www.flysafair.co.za/cheap-flights/durban" target="_blank">
+  <button class="info-btn">More Info</button>
+</a>      
+    </div>
+  </div>
+</div>
+
+
+
+<section class="row">
+  <h3>Because we miss you</h3>
+  <div class="row-posters">
+    <img src="images/halloween.JPG" onclick="openShow('show3.html')">
+  </div>
+</section>
+
+<section class="row">
+  <h3>2024 Finds 👀</h3>
+  <div class="row-posters">
+    <img src="images/escape-room.jpg" onclick="openShow('show2.html')">
+  </div>
+</section>
+
+<section class="row">
+  <h3>munch munch 👀</h3>
+  <div class="row-posters">
+    <img src="images/bgr.jpg" onclick="openShow('show1.html')">
+  </div>
+</section>
+
+<section class="row">
+  <h3>Your Next Adventure 👀</h3>
+  <div class="row-posters">
+    <img src="images/ai-ushaka.PNG" onclick="openShow('show4.html')">
+  </div>
+</section>
+
+<script>
+function goBack() {
+  window.location.href = "index.html";
+}
+
+function openShow(page) {
+  window.location.href = page;
+}
+</script>
+
+</body>
+</html>

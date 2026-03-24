@@ -1,0 +1,451 @@
+body {
+  margin: 0;
+   font-family: 'Inter', sans-serif;
+  background-color: #141414;
+  color: white;
+}
+
+/* INTRO */
+#intro {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  z-index: 2000;
+  transition: opacity 0.6s ease;
+}
+
+/* LOGO */
+.netflix-logo {
+  width: 140px;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* LOADER */
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(229, 9, 20, 0.2);
+  border-top: 4px solid #e50914;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  opacity: 0;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* SCREENS */
+.screen {
+  display: none;
+  padding: 20px;
+  text-align: center;
+}
+
+#profiles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* TITLE */
+.title {
+  font-size: 64px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  letter-spacing: 1.5px;
+}
+
+/* PROFILES */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.profile {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* NAME */
+.profile p {
+  margin-top: 14px;
+  font-size: 20px;
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+
+/* IMAGE */
+.profile img {
+  width: 160px;
+  height: 160px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 transparent;
+}
+
+.profile:hover img {
+  transform: scale(1.2);  /* stronger zoom */
+  border: 3px solid white;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+.profile:hover p {
+  color: white;
+}
+
+/* OPTIONAL: slight lift */
+.profile:hover {
+  transform: translateY(-5px);
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h2 {
+  color: #e50914;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* BANNER */
+.banner {
+  position: relative;
+  margin-top: 20px;
+}
+
+.banner img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.banner-text {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.banner-text h1 {
+  font-size: 32px;
+}
+
+.banner-text p {
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* ROW */
+.row {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.row-posters {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding: 10px;
+}
+
+.row-posters img {
+  width: 140px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.row-posters img:hover {
+  transform: scale(1.08);
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+}
+
+.modal-content {
+  margin: 60px auto;
+  width: 90%;
+  max-width: 400px;
+  background: #181818;
+  padding: 15px;
+  border-radius: 10px;
+}
+.profile img {
+  box-shadow: 0 0 0 transparent;
+}
+
+.profile:hover img {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+.logo {
+  width: 40px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.show-page {
+  padding: 20px;
+}
+
+.show-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.show-text {
+  margin-top: 20px;
+}
+
+.show-text h1 {
+  font-size: 28px;
+}
+
+.show-text p {
+  color: #ccc;
+}
+
+/* CONTAINER */
+.show-container {
+  display: flex;
+  height: 90vh;
+  padding: 40px;
+  gap: 40px;
+}
+
+/* LEFT SIDE */
+.show-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.show-left h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.meta {
+  display: flex;
+  gap: 15px;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.description {
+  max-width: 500px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.cast {
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+/* PLAY BUTTON */
+.play-btn {
+  background: white;
+  color: black;
+  border: none;
+  padding: 12px 25px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.play-btn:hover {
+  background: #ddd;
+}
+
+/* LOCKED MESSAGE */
+.locked {
+  margin-top: 15px;
+  color: #e50914;
+  font-weight: bold;
+}
+
+/* RIGHT SIDE */
+.show-right {
+  flex: 1;
+  position: relative;
+}
+
+.show-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* PLAY OVERLAY */
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  color: white;
+  opacity: 0.8;
+}   
+/* POPUP BACKGROUND */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+/* POPUP BOX */
+.popup-content {
+  background: #181818;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+  
+}
+
+/* TEXT */
+.popup-content p {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+/* BUTTON */
+.popup-content button {
+  background: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background: #ddd;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+  z-index: 1000;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-item {
+  color: #ccc;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.nav-item.active {
+  color: white;
+}
+
+.nav-item:hover {
+  color: white;
+}
+.hero {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to top, #141414, transparent);
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 80px;
+  left: 40px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+}
+
+.hero-buttons {
+  margin-top: 15px;
+}
+
+.info-btn {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 5px;
+}

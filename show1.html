@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <img src="images/Netflix_2016_N_logo.svg.png" class="logo">
+  <button onclick="goBack()" class="back-btn">✕</button>
+</header>
+
+<div class="show-container">
+
+  <!-- LEFT SIDE -->
+  <div class="show-left">
+    <h1>Escape Room Chaos 😭</h1>
+
+    <div class="meta">
+      <span class="stars">⭐⭐⭐⭐⭐</span>
+      <span>2024</span>
+      <span>1 unforgettable day</span>
+    </div>
+
+    <p class="description">
+      One of the funniest and most chaotic days we’ve had together. 
+      We laughed, we panicked, we barely escaped.
+    </p>
+
+    <p class="cast">
+      <strong>Cast:</strong> You, Me, Everyone 😌
+    </p>
+
+    <button class="play-btn" onclick="playMessage()">▶ Play</button>
+
+    <div id="popup" class="popup">
+  <div class="popup-content">
+    <p>Come to Durban to unlock more memories 😌</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="show-right">
+    <img src="images/bgr.jpg" class="show-img">
+
+    <div class="play-overlay">▶</div>
+  </div>
+
+</div>
+
+<script>
+function goBack() {
+  window.location.href = "home.html";
+}
+
+function playMessage() {
+  document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+</script>
+
+</body>
+</html>
