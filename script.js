@@ -48,6 +48,7 @@ function goBack() {
   });
 }
 function goToHome() {
+  sessionStorage.setItem("visited", "true"); // 👈 THIS LINE FIXES EVERYTHING
   window.location.href = "home.html";
 }
 
