@@ -10,35 +10,32 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <script>
+
+<script>
   if (!sessionStorage.getItem("visited")) {
     window.location.href = "index.html";
   }
 </script>
+
 <header class="navbar">
   <div class="nav-left">
     <img src="images/Netflix_2016_N_logo.svg.png" class="logo">
-   
-   <a href="https://tinyurl.com/2p9j6tzv" target="_blank">
-     <span class="nav-item active">Home</span>
-</a>
-    
-    <a href="https://tinyurl.com/2p9j6tzv" target="_blank">
-    <span class="nav-item">Memories</span>
-</a>
-  
-     <a href="https://tinyurl.com/2p9j6tzv" target="_blank">
-  <span class="nav-item">Durban 👀</span>
-</a>
-   
+
+    <a href="https://tinyurl.com/2p9j6tzv"><span class="nav-item active">Home</span></a>
+    <a href="https://www.fedhealth.co.za/articles/the-benefits-of-family-time/"><span class="nav-item">Memories</span></a>
+    <a href="https://tinyurl.com/23bez9mk"><span class="nav-item">Durban 👀</span></a>
   </div>
 
+
+
   <div class="nav-right">
-    <button onclick="goBack()" class="back-btn">← Exit</button>
+    <button onclick="goBack()" class="profile-btn">Change Profile</button>
   </div>
 </header>
 
+<!-- HERO -->
 <div class="hero">
   <img src="images/margate.jpg" class="hero-img">
 
@@ -48,50 +45,55 @@
 
     <div class="hero-buttons">
       <a href="https://www.flysafair.co.za/cheap-flights/durban" target="_blank">
-  <button class="play-btn">▶ Play</button>
-</a>
-<a href="https://www.flysafair.co.za/cheap-flights/durban" target="_blank">
-  <button class="info-btn">More Info</button>
-</a>      
+        <button class="play-btn">▶ Play</button>
+      </a>
+      <a href="https://ushakamarine.com/" target="_blank">
+        <button class="info-btn">More Info</button>
+      </a>
     </div>
   </div>
 </div>
 
-
-
+<!-- ROWS -->
 <section class="row">
-  <h3>Because we miss you</h3>
+  <h3>Don't 'Scare' us with a No</h3>
   <div class="row-posters">
     <img src="images/halloween.JPG" onclick="openShow('show3.html')">
   </div>
 </section>
 
 <section class="row">
-  <h3>2024 Finds 👀</h3>
+  <h3>Time to 'escape' from the city </h3>
   <div class="row-posters">
     <img src="images/escape-room.jpg" onclick="openShow('show2.html')">
   </div>
 </section>
 
 <section class="row">
-  <h3>munch munch 👀</h3>
+  <h3>You can 'eat' delicious lamb</h3>
   <div class="row-posters">
     <img src="images/bgr.jpg" onclick="openShow('show1.html')">
   </div>
 </section>
 
 <section class="row">
-  <h3>Your Next Adventure 👀</h3>
+  <h3>'Ushaka' Awaits</h3>
   <div class="row-posters">
     <img src="images/ai-ushaka.PNG" onclick="openShow('show4.html')">
   </div>
 </section>
 
-<script>
+<script src="script.js"></script>
+
+
+
+  <script>
 function goBack() {
   window.location.href = "index.html";
 }
+</script>
 
+<script>
 function openShow(page) {
   window.location.href = page;
 }

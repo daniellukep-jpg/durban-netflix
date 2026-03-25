@@ -4,7 +4,7 @@ window.onload = function () {
 
   // play on first interaction ANYWHERE
   function playSoundOnce() {
-    sound.play();
+    sound.play().catch(() => {});
     document.removeEventListener("click", playSoundOnce);
     document.removeEventListener("touchstart", playSoundOnce);
   }

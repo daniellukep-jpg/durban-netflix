@@ -135,10 +135,23 @@ header h2 {
 }
 
 .back-btn {
-  background: none;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+
+  background: rgba(0,0,0,0.6);
   border: none;
   color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: white;
+  color: black;
 }
 
 /* BANNER */
@@ -169,8 +182,12 @@ header h2 {
 
 /* ROW */
 .row {
-  margin-top: 30px;
-  text-align: left;
+  margin-top: 40px;
+}
+
+.row h3 {
+  padding-left: 40px;
+  margin-bottom: 10px;
 }
 
 .row-posters {
@@ -231,9 +248,13 @@ header {
   padding: 20px;
 }
 
-.show-image {
-  width: 100%;
-  border-radius: 10px;
+.show-img {
+  height: 88vh;
+  width: auto;           /* 🔥 key change */
+  max-width: 100%;       /* prevents overflow */
+  object-fit: contain;   /* 🔥 keeps full image */
+  border-radius: 12px;
+  transform: translateY(-80px); /* adjust: -20px to -50px if needed */  
 }
 
 .show-text {
@@ -251,40 +272,53 @@ header {
 /* CONTAINER */
 .show-container {
   display: flex;
-  height: 90vh;
-  padding: 40px;
-  gap: 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  height: calc(100vh - 40px); /* 🔥 key fix */
+  padding: 10px 30px;
+  gap: 20px;
+
+  box-sizing: border-box;
 }
+
 
 /* LEFT SIDE */
 .show-left {
-  flex: 1;
+  flex: 0.7;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center;   /* ✅ CENTER TEXT */
+  padding-top: 0;            /* remove offset */
+   transform: translateY(160px); /* adjust: 10–30px */ 
 }
-
 .show-left h1 {
-  font-size: 48px;
+  font-size: 42px;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
-.meta {
+.show-right {
+  flex: 2.3;   /* MUCH bigger image space */
   display: flex;
-  gap: 15px;
-  color: #aaa;
-  margin-bottom: 20px;
+   align-items: flex-start;   /* was center */
+  padding-top: 20px;         /* small controlled push */
+  justify-content: center;
+}
+.meta {
+  margin-bottom: 10px;
+  font-size: 13px;
 }
 
 .description {
-  max-width: 500px;
-  line-height: 1.5;
-  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 1.4;
+  margin-bottom: 15px;
 }
 
 .cast {
-  color: #ccc;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  font-size: 14px;
 }
 
 /* PLAY BUTTON */
@@ -292,14 +326,16 @@ header {
   background: white;
   color: black;
   border: none;
-  padding: 12px 25px;
+  padding: 14px 30px;
   font-size: 18px;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .play-btn:hover {
   background: #ddd;
+  transform: scale(1.05);
 }
 
 /* LOCKED MESSAGE */
@@ -313,13 +349,6 @@ header {
 .show-right {
   flex: 1;
   position: relative;
-}
-
-.show-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
 }
 
 /* PLAY OVERLAY */
@@ -379,12 +408,18 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 15px 40px;
+  padding: 15px 20px; /* less side padding */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
   z-index: 1000;
+  box-sizing: border-box; /* prevents cutoff */
+}
+
+.nav-right {
+  margin-right: 10px;
 }
 
 .nav-left {
@@ -410,12 +445,22 @@ header {
   position: relative;
   height: 70vh;
   overflow: hidden;
+  margin-top: 50px;
 }
 
 .hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
 }
 
 .hero::after {
@@ -448,4 +493,111 @@ header {
   padding: 10px 20px;
   margin-left: 10px;
   border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.info-btn:hover {
+  background: rgba(255,255,255,0.4);
+  transform: scale(1.05);
+}
+
+.play-btn,
+.info-btn {
+  transition: all 0.25s ease;
+}
+
+/* FIX NAVBAR OVERLAP */
+.hero {
+  margin-top: 70px;
+}
+
+/* HIDE SCROLLBAR (NETFLIX STYLE) */
+.row-posters::-webkit-scrollbar {
+  display: none;
+}
+
+/* PREVENT SIDE SCROLL */
+body {
+  overflow-x: hidden;
+}
+
+.show-page {
+  overflow: hidden;
+}
+
+/* BETTER HOVER EFFECT */
+.row-posters img:hover {
+  transform: scale(1.2);
+  z-index: 2;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at left, rgba(0,0,0,0.8), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+.show-container {
+  position: relative;
+  z-index: 1;
+}
+
+.profile-btn {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+   white-space: nowrap;
+}
+
+.profile-btn:hover {
+  background: white;
+  color: black;
+}
+.row-posters {
+  display: flex;
+  gap: 15px;
+  padding: 10px 0 10px 40px; /* ONLY left padding */
+} 
+
+.row-posters img {
+  width: 180px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+.row-posters img:hover {
+  transform: scale(1.2);
+  z-index: 5;
+}
+.hero-content {
+  position: absolute;
+  bottom: 80px;
+  left: 40px;
+  max-width: 500px;
+}
+
+.hero-content p {
+  margin-top: 10px;
+  color: #ddd;
+}
+.show-page .play-btn {
+  width: 400%;
+  max-width: 700px;
+  display: block;
+}
+.hero .play-btn {
+  width: auto;     /* back to normal */
+  max-width: none;
+  display: inline-block;
 }
