@@ -643,6 +643,8 @@ body::before {
     flex-direction: column;
     align-items: center;
     padding: 20px;
+
+        height: auto !important; /* 🔥 THIS FIXES SCROLL */
   }
 
   /* remove desktop offset ONLY on phone */
