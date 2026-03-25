@@ -608,6 +608,7 @@ body::before {
   /* allow scrolling properly */
   .show-page {
     overflow-x: hidden;
+    overflow-y: auto;   
   }
 
   /* fix navbar stacking */
